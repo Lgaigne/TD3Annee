@@ -3,6 +3,9 @@ package calculator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -57,5 +60,15 @@ class CalculatorTest {
         //THEN
         assertThat(resultatDiv0).isEqualTo(0);
     }
+    @ParameterizedTest
+    @CsvSource({"0,1,1","1,2,3","-2,2,0","0,0,0","-1,-2,-3"})
+    void Test_plusieursValeurs(int opG,int opD,int ResultatAttendu)
+    {
+        int plsResultatAdd = calcul.add(opG,opD);
+
+        //THEN
+        assertThat(plsResultatAdd).isEqualTo(ResultatAttendu);
+    }
+
 
 }
