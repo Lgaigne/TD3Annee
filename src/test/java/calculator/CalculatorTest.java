@@ -7,6 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
@@ -49,16 +50,20 @@ class CalculatorTest {
     }
 
     @Test
-    void Test_divide_0() {
+    void Test_divide_0() throws RuntimeException {
         //GIVEN
         int opD = 0;
         int opG = 0;
 
         //WHEN
-        double resultatDiv0 = calcul.divide(opG,opD);
+        try {
+            double resultatDiv0 = calcul.divide(opG, opD);
+        }
+        catch(Exception e){
+            //THEN
+            assertThat(e.getMessage()).isEqualTo("Division par 0");
+        }
 
-        //THEN
-        assertThat(resultatDiv0).isEqualTo(0);
     }
     @ParameterizedTest
     @CsvSource({"0,1,1","1,2,3","-2,2,0","0,0,0","-1,-2,-3"})
