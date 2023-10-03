@@ -32,5 +32,51 @@ class FacteursPremierTest {
         assertThat(nbPremier).isEqualTo(resultatAttendu);
 
     }
+    @Test
+    void Test_generation_1(){
+        //GIVEN
+        int nombre = 1;
+
+
+        FacteursPremier generationPremier = new FacteursPremier();
+        //WHEN
+        List nbPremier = generationPremier.generate(nombre);
+        //THEN
+        assertThat(nbPremier).isEqualTo(resultatAttendu);
+
+    }
+    @Test
+    void Test_generation_4(){
+        //GIVEN
+        int nombre = 4;
+        resultatAttendu.add(2);
+        resultatAttendu.add(2);
+
+
+        FacteursPremier generationPremier = new FacteursPremier();
+        //WHEN
+        List nbPremier = generationPremier.generate(nombre);
+        //THEN
+        assertThat(nbPremier).isEqualTo(resultatAttendu);
+
+    }
+    @Test
+    void Test_generation_2310(){
+        //GIVEN
+        int nombre = 2310;
+        resultatAttendu.add(2);
+        resultatAttendu.add(3);
+        resultatAttendu.add(5);
+        resultatAttendu.add(7);
+        resultatAttendu.add(11);
+
+
+        FacteursPremier generationPremier = new FacteursPremier();
+        //WHEN
+        List nbPremier = generationPremier.generate(nombre);
+        //THEN
+        assertThat(nbPremier).isEqualTo(resultatAttendu);
+
+    }
 
 }

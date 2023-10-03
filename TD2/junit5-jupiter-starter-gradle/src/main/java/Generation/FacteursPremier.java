@@ -5,8 +5,14 @@ import java.util.*;
 public class FacteursPremier {
     public List generate(int nombre){
         List list = new ArrayList<Integer>();
-        if(nombre > 1){
-            list.add(2);
+        int diviseur = 2;
+        while (nombre > 1) {
+            if (nombre % diviseur == 0) {
+                list.add(diviseur);
+                nombre /= diviseur;
+            } else {
+                diviseur++;
+            }
         }
         return list;
     }
