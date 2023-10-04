@@ -3,8 +3,9 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.*;
 public class Deplacement {
+    String position = "Nord";
     public String tourner(int nombre){
-        String position = "Nord";
+
         for(int i =0;i< nombre;i++) {
             switch (position) {
                 case "Nord":
