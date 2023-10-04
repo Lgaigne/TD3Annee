@@ -5,14 +5,19 @@ import java.util.*;
 public class Deplacement {
     public String tourner(int nombre){
         String position = "Nord";
-        switch(position){
-            case "Nord":
-                position = "Est";
-                break;
-             default:
-                 position = "Erreur";
-                 break;
+        for(int i =0;i< nombre;i++) {
+            switch (position) {
+                case "Nord":
+                    position = "Est";
+                    break;
+                case "Est":
+                    position = "Sud";
+                    break;
+                default:
+                    position = "Erreur";
+                    break;
 
+            }
         }
         return position;
     }
