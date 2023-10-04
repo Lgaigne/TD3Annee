@@ -57,5 +57,15 @@ class DeplacementTest {
         //THEN
         assertThat(positionFinal).isEqualTo(resultatAttendu);
     }
+    @Test
+    void Test_tourner_4(){
+        //GIVEN
+        int nombreTour = 4;
+        resultatAttendu = "Nord";
+        //WHEN
+        String positionFinal = DeplacementPosition.tourner(nombreTour);
+        //THEN
+        assertThat(positionFinal).isEqualTo(resultatAttendu);
+    }
 
 }

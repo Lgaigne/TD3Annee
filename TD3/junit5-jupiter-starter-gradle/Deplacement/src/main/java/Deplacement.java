@@ -16,6 +16,9 @@ public class Deplacement {
                 case "Sud":
                     position = "Ouest";
                     break;
+                case "Ouest":
+                    position = "Nord";
+                    break;
                 default:
                     position = "Erreur";
                     break;
