@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a89b4e53-badb-42af-9b94-7f91ecfdde78" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../TD1/Calculator/Calculator" beforeDir="false" afterPath="$PROJECT_DIR$/../../../TD1/Calculator/Calculator" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../junit5-jupiter-starter-gradle/junit5-jupiter-starter-gradle/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../junit5-jupiter-starter-gradle/junit5-jupiter-starter-gradle/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../junit5-jupiter-starter-gradle/junit5-jupiter-starter-gradle/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "F:/BUT/Semestre 5/R5D08/TD3/junit5-jupiter-starter-gradle/Deplacement"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>
