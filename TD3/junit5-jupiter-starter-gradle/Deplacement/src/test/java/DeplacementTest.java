@@ -1,0 +1,30 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.*;
+
+class DeplacementTest {
+    String resultatAttendu;
+    Deplacement DeplacementPosition;
+
+    @BeforeEach
+    void init_Test(){
+         DeplacementPosition = new Deplacement();
+
+    }
+    @Test
+    void Test_tourner_0(){
+        //GIVEN
+        int nombreTour = 0;
+        resultatAttendu = "Nord";
+        //WHEN
+        String positionFinal = DeplacementPosition.tourner(nombreTour);
+        //THEN
+        assertThat(positionFinal).isEqualTo(resultatAttendu);
+    }
+
+}
