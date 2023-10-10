@@ -30,4 +30,15 @@ class ConvertisseurRomainTest {
         //THEN
         assertThat(positionFinal).isEqualTo(resultatAttendu);
     }
+
+    @Test
+    void convertir_2_en_II() {
+        //GIVEN
+        int nombre = 2;
+        resultatAttendu = "II";
+        //WHEN
+        String positionFinal = Convertisseur.convertir(nombre);
+        //THEN
+        assertThat(positionFinal).isEqualTo(resultatAttendu);
+    }
 }
