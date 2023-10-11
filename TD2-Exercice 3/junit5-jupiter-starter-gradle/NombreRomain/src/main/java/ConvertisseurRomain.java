@@ -1,8 +1,11 @@
 public class ConvertisseurRomain {
     public String convertir(int Nombre){
+        String lettreRomain = "I";
+
         if (Nombre>1){
-            return "II";
+            lettreRomain = "II";
         }
-        return "I";
+
+        return lettreRomain;
     }
 }
