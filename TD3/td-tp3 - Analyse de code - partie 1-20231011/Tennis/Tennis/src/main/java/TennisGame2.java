@@ -1,13 +1,13 @@
 
 public class TennisGame2 implements TennisGame
 {
-    public int pointP1 = 0;
-    public int pointP2 = 0;
+    public int p1Point = 0;
+    public int p2Point = 0;
     
-    public String resP1 = "";
-    public String resP2 = "";
-    private String player1Name;
-    private String player2Name;
+    public String p1Res = "";
+    public String p2Res = "";
+    private final String player1Name;
+    private final String player2Name;
 
     public TennisGame2(String player1Name, String player2Name) {
         this.player1Name = player1Name;
@@ -16,120 +16,129 @@ public class TennisGame2 implements TennisGame
 
     public String getScore(){
         String score = "";
-        if (pointP1 == pointP2 && pointP1 < 4)
+        if (p1Point == p2Point && p1Point < 4)
         {
-            if (pointP1==0)
-                score = "Love";
-            if (pointP1==1)
-                score = "Fifteen";
-            if (pointP1==2)
-                score = "Thirty";
-            score += "-All";
+            switch(p1Point){
+                case 0:
+                    score = "Love";
+                    break;
+                case 1 :
+                    score = "Fifteen";
+                    break;
+                case 2:
+                    score = "Thirty";
+                    break;
+                default:   score = "Erreur";
+            }
+
         }
-        if (pointP1==pointP2 && pointP1>=3)
+        if (p1Point == p2Point && p1Point >=3)
             score = "Deuce";
         
-        if (pointP1 > 0 && pointP2==0)
+        if (p1Point > 0 && p2Point ==0)
         {
-            if (pointP1==1)
-                resP1 = "Fifteen";
-            if (pointP1==2)
-                resP1 = "Thirty";
-            if (pointP1==3)
-                resP1 = "Forty";
-            
-            resP2 = "Love";
-            score = resP1 + "-" + resP2;
+            switch(p1Point) {
+                case 1:
+                    p1Res = "Fifteen";
+                    break;
+                case 2:
+                    p1Res = "Thirty";
+                    break;
+                case 3:
+                    p1Res = "Forty";
+                    break;
+                default: score = "Erreur";
+            }
+            p2Res = "Love";
+            score = p1Res + "-" + p2Res;
         }
-        if (pointP2 > 0 && pointP1==0)
+        if (p2Point > 0 && p1Point ==0)
         {
-            if (pointP2==1)
-                resP2 = "Fifteen";
-            if (pointP2==2)
-                resP2 = "Thirty";
-            if (pointP2==3)
-                resP2 = "Forty";
+            switch(p2Point) {
+                case 1:
+                    p2Res = "Fifteen";
+                    break;
+                case 2:
+                    p2Res = "Thirty";
+                    break;
+                case 3:
+                    p2Res = "Forty";
+                    break;
+                default: score = "Erreur";
+            }
             
-            resP1 = "Love";
-            score = resP1 + "-" + resP2;
+            p1Res = "Love";
+            score = p1Res + "-" + p2Res;
         }
         
-        if (pointP2>pointP2 && pointP1 < 4)
+        if (p1Point > p2Point && p1Point < 4)
         {
-            if (pointP1==2)
-                resP1="Thirty";
-            if (pointP1==3)
-                resP1="Forty";
-            if (pointP2==1)
-                resP2="Fifteen";
-            if (pointP2==2)
-                resP2="Thirty";
-            score = resP1 + "-" + resP1;
+            if (p1Point ==2)
+                p1Res ="Thirty";
+            else if (p1Point ==3) {
+                p1Res ="Forty";
+            }
+            else{score="Erreur";}
+
+            if (p2Point ==1)
+                p2Res ="Fifteen";
+            else if (p2Point ==2) {
+                p2Res ="Thirty";
+            }
+            else{score="Erreur";}
+            score = p1Res + "-" + p2Res;
         }
-        if (pointP2>pointP1 && pointP2 < 4)
+        if (p2Point > p1Point && p2Point < 4)
         {
-            if (pointP2==2)
-                resP2="Thirty";
-            if (pointP2==3)
-                resP2="Forty";
-            if (pointP1==1)
-                resP1="Fifteen";
-            if (pointP1==2)
-                resP1="Thirty";
-            score = resP1 + "-" + resP1;
+            if (p2Point ==2)
+                p2Res ="Thirty";
+            else if (p2Point ==3) {
+                p2Res ="Forty";
+            }
+            else{score="Erreur";}
+
+            if (p1Point ==1)
+                p1Res ="Fifteen";
+            else if (p1Point ==2) {
+                p1Res ="Thirty";
+            }
+            else{score="Erreur";}
+
+            score = p1Res + "-" + p2Res;
         }
         
-        if (pointP1 > pointP2 && pointP2 >= 3)
+        if (p1Point > p2Point && p2Point >= 3)
         {
             score = "Advantage player1";
         }
         
-        if (pointP2 > pointP1 && pointP1 >= 3)
+        if (p2Point > p1Point && p1Point >= 3)
         {
             score = "Advantage player2";
         }
         
-        if (pointP1>=4 && pointP2>=0 && (pointP1-pointP2)>=2)
+        if (p1Point >=4 && p2Point >=0 && (p1Point - p2Point)>=2)
         {
             score = "Win for player1";
         }
-        if (pointP2>=4 && pointP1>=0 && (pointP2-pointP1)>=2)
+        if (p2Point >=4 && p1Point >=0 && (p2Point - p1Point)>=2)
         {
             score = "Win for player2";
         }
         return score;
     }
-    
-    public void setP1Score(int number){
-        
-        for (int i = 0; i < number; i++)
-        {
-            scoreP1();
-        }
-            
+    public void p1Score(){
+        p1Point++;
     }
     
-    public void setP2Score(int number){
-        
-        for (int i = 0; i < number; i++)
-        {
-            scoreP2();
-        }
-            
-    }
-    
-    public void scoreP1(){
-        pointP1++;
-    }
-    
-    public void scoreP2(){
-        pointP2++;
+    public void p2Score(){
+        p2Point++;
     }
 
     public void wonPoint(String player) {
-        if (player == "player1")
-            scoreP1();
+        if (player.equals("player1"))
+            p1Score();
         else
-            scoreP2();
+            p2Score();
     }
 }
